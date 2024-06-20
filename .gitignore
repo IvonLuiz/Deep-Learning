@@ -1,0 +1,16 @@
+# Ignore all .log files
+*.log
+
+# Ignore all files in the /build directory
+/build/
+
+# Ignore the .env file
+.venv
+
+# Ignore Python bytecode files
+*.pyc
+
+# Ignore files with the extension .bak (backup files)
+*.bak
+
+Deep-Learning.code-workspace
