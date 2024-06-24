@@ -6,6 +6,8 @@
 
 # Ignore the .env file
 .venv
+.env
+env
 
 # Ignore Python bytecode files
 *.pyc
