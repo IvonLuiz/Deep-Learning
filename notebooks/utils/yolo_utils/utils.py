@@ -99,14 +99,17 @@ def draw_boxes(image, boxes, box_classes, class_names, scores=None):
         box_class = class_names[c]
         box = boxes[i]
         
-        if isinstance(scores.numpy(), np.ndarray):
-            score = scores.numpy()[i]
+        if isinstance(scores, np.ndarray):
+            score = scores[i]
             label = '{} {:.2f}'.format(box_class, score)
         else:
             label = '{}'.format(box_class)
 
         draw = ImageDraw.Draw(image)
-        label_size = draw.textsize(label, font)
+        label_width = draw.textlength(label, font=font)
+        label_bbox = font.getbbox(label)
+        label_height = label_bbox[3] - label_bbox[1]
+        label_size = (label_width, label_height)
 
         top, left, bottom, right = box
         top = max(0, np.floor(top + 0.5).astype('int32'))
@@ -120,7 +123,6 @@ def draw_boxes(image, boxes, box_classes, class_names, scores=None):
         else:
             text_origin = np.array([left, top + 1])
 
-        # My kingdom for a good redistributable image drawing library.
         for i in range(thickness):
             draw.rectangle(
                 [left + i, top + i, right - i, bottom - i], outline=colors[c])

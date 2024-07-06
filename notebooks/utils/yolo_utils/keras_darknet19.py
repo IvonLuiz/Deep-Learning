@@ -14,7 +14,7 @@ from tensorflow.keras.regularizers import l2
 # sys.path.insert(0, script_dir)
 print(os.path.dirname(os.path.abspath(__file__)))
 
-from utils import compose
+from .utils import compose
 
 # Partial wrapper for Convolution2D with static default argument.
 _DarknetConv2D = partial(Conv2D, padding='same')
