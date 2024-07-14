@@ -1,9 +1,5 @@
-import numpy as np
 import os
 import sys
-import random
-import tensorflow as tf
-from pathlib import Path
 from six.moves import urllib
 import tarfile
 import shutil
@@ -45,7 +41,7 @@ if not os.path.exists(selection_folder):
     os.makedirs(selection_folder)
     
 # if not os.path.exists(download_path):
-#     download_and_uncompress_tarball(database_url, download_folder)
+    download_and_uncompress_tarball(database_url, download_folder)
 
 extracted_folder = os.path.join(download_folder, 'lfw-deepfunneled')
 
