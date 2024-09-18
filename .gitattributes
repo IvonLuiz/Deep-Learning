@@ -4,3 +4,4 @@ notebooks/utils/nst_utils/pretrained-model/imagenet-vgg-verydeep-19.mat filter=l
 datasets/texts/glove.6B.50d.txt filter=lfs diff=lfs merge=lfs -text
 datasets/audio/*.wav filter=lfs diff=lfs merge=lfs -text
 datasets/audio/XY_dev/*.npy filter=lfs diff=lfs merge=lfs -text
+notebooks/utils/*.h5 filter=lfs diff=lfs merge=lfs -text
